@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="weatherIcon.png">
+
+  </head>
+  <body>
+      <nav class="navbar">
+        <img src="hamburger.png" alt="Menu" class="hamburger-icon" onclick="toggleMenu()"/>
+        <div class="logo">Weatherly</div>
+        <div class="clothing-suggestion" id="clothingTip">
+          👕 Tip: Loading...
+        </div>
+      </nav>
+
+    <div class="container">
+      <div class="weather-input">
+        <div class="input-group">
+          <input
+            type="text"
+            id="userLocation"
+            placeholder="Search for places..."
+          />
+
+          <select class="converter" id="converter">
+            <option>°C</option>
+            <option>°F</option>
+          </select>
+
+          <i class="fa fa-search" onclick="findUserLocation()"></i>
+        </div>
+        <!-- style="background: url('https://openweathermap.org/img/wn/10d@2x.png'); -->
+        <div class="weatherIcon">
+        </div>
+        <h2 class="temperature"></h2>
+        <div class="feelsLike bold-500"></div>
+        <div class="description bold-500"></div>
+        <hr />
+        <div class="date bold-500"></div>
+        <div class="city bold-500"></div>
+      </div>
+
+      <div class="weather-output">
+        <h2 class="heading">Today's Highlights</h2>
+        <div class="Highlights">
+          <div class="humidity bold-500">
+            Humidity
+            <i class="fa-solid fa-water"></i>
+            <h1 id="HValue"></h1>
+          </div>
+
+          <div class="wind-speed bold-500">
+            Wind Speed
+            <i class="fa-solid fa-wind"></i>
+            <h1 id="WValue"></h1>
+          </div>
+
+          <div class="sun">
+            <span>
+              <i class="fa-solid fa-sun"></i>
+              <p class="bold-500"><span id="SRValue"></span>Sunrise</p>
+            </span>
+            <span>
+              <i class="fa-regular fa-sun"></i>
+              <p class="bold-500"><span id="SSValue"></span>Sunset</p>
+            </span>
+          </div>
+
+          <div class="clouds">
+            Clouds
+            <i class="fa-solid fa-cloud"></i>
+            <h1 id="CValue"></h1>
+          </div>
+
+          <div class="visibility bold-500">
+            Visibility
+            <i class="fas fa-eye"></i>
+            <h1 id="VValue" style="font-size: 23px"></h1>
+          </div>
+
+          <div class="pressure bold-500">
+            Air Quality
+            <i class="fa-solid fa-smog"></i>
+            <h1 id="PValue"></h1>
+          </div>
+        </div>
+        <br />
+        <h2 class="heading">Next 5 days</h2>
+        <div class="forecast" id="weeklyForecast">
+          <div class="forecast-card"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
